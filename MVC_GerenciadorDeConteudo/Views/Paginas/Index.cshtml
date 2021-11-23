@@ -1,15 +1,10 @@
 ﻿
 @{
     ViewBag.Title = "Paginas";
-    List<Business.Pagina> pagina = ViewBag.Paginas;
+    List<Business.Pagina> paginas = ViewBag.Paginas;
 }
 
-<div class="jumbotron">
-    <h1>Cadastrar Páginas</h1>
-   <div>
-       <a href="/paginas" class="btn-default">Ir para cadastro de paginas</a>
-   </div>
-</div>
+
 <div class="jumbotron">
     <h1>Páginas</h1>
     <table class="table">
@@ -18,7 +13,7 @@
             <td>Nome</td>
             <td>Data</td>
         </tr>
-        @foreach (var p in pagina)
+        @foreach (var p in paginas)
         {
             <tr>
             <td>@p.Id:</td>

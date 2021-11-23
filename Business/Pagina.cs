@@ -24,8 +24,8 @@ namespace Business
                 {
                 var pagina = new Pagina();
                 pagina.Id = Convert.ToInt32(row["Id"]);
-                pagina.Name = Convert.ToString(row["Nome"]);
-                pagina.Conteudo = row["conteudo"].ToString();
+                pagina.Name = Convert.ToString(row["Name"]);
+                pagina.Conteudo = row["Conteudo"].ToString();
                 pagina.Data = Convert.ToDateTime(row["data"]);
 
                 
