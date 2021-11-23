@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Paginas";
+    List<Business.Pagina> pagina = ViewBag.Paginas;
+}
+
+<div class="jumbotron">
+    <h1>Cadastrar Páginas</h1>
+   <div>
+       <a href="/paginas" class="btn-default">Ir para cadastro de paginas</a>
+   </div>
+</div>
+<div class="jumbotron">
+    <h1>Páginas</h1>
+    <table class="table">
+        <tr>
+            <td>Id</td>
+            <td>Nome</td>
+            <td>Data</td>
+        </tr>
+        @foreach (var p in pagina)
+        {
+            <tr>
+            <td>@p.Id:</td>
+            <td>@p.Name:</td>
+            <td>@p.Data:</td>
+            </tr>
+        }
+    </table>
+</div>
