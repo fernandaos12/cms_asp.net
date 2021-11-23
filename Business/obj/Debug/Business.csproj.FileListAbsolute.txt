@@ -1,0 +1,9 @@
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\bin\Debug\Business.dll
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\bin\Debug\Business.pdb
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\bin\Debug\Database.dll
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\bin\Debug\Database.pdb
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\obj\Debug\Business.csproj.AssemblyReference.cache
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\obj\Debug\Business.csproj.CoreCompileInputs.cache
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\obj\Debug\Business.csproj.CopyComplete
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\obj\Debug\Business.dll
+D:\workspace\gerenciadordeconteudo\MVC_GerenciadorDeConteudo\Business\obj\Debug\Business.pdb
