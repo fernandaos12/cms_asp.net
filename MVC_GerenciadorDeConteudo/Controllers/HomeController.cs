@@ -11,14 +11,14 @@ namespace MVC_GerenciadorDeConteudo.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Paginas = new Pagina().Lista();
+           // ViewBag.Paginas = new Pagina().Lista();
             return View();
         }
         public ActionResult Novo()
         {
             return View();
         }
-        public ActionResult About()
+        public ActionResult About(int id)
         {
             ViewBag.Message = "Your application description page.";
 
