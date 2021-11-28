@@ -39,19 +39,33 @@ namespace MVC_GerenciadorDeConteudo.Controllers
             ViewBag.Pagina = pagina;
             return View();
         }
-        
+
+        [HttpPost]
+        [ValidateInput(false)]
         public void Alterar(int id)
         {
-          //  var pagina = new Pagina();
+            //  var pagina = new Pagina();
+            try
+            {
+                //  var pagina = (Pagina)Pagina.BuscaPorId(id);
+                var pagina = (Pagina)Pagina.BuscaPorId(id);
+                DateTime data;
+                DateTime.TryParse(Request["data"], out data);
+                
+                pagina.Name = Request["name"];
+                pagina.Conteudo = Request["conteudo"];
+                pagina.Data = Convert.ToDateTime(Request["data"]);
 
-           var pagina = (Pagina)Pagina.BuscaPorId(id);
+                pagina.Save();
+                // Response.Redirect("/paginas");
 
-            pagina.Name = Request["name"];
-            pagina.Conteudo = Request["conteudo"];
-            pagina.Data = Convert.ToDateTime(Request["data"]);
-
-            pagina.Save();
-            Response.Redirect("/paginas");
+                TempData["Sucesso"] = "Página alterada com sucesso";
+            }
+            catch(Exception ex)
+            {
+                TempData["erro"] = "Página não pode ser alterada (" + ex.Message +") ";
+            }
+         
         }
 
 
@@ -59,6 +73,13 @@ namespace MVC_GerenciadorDeConteudo.Controllers
         {
             Pagina.Excluir(id);
             Response.Redirect("/paginas");
+        }
+
+        public ActionResult Preview(int id)
+        {
+            var pagina = Pagina.BuscaPorId(id);
+            ViewBag.Pagina = pagina;
+            return View();
         }
 
     }

@@ -3,30 +3,42 @@
     ViewBag.Title = "Paginas";
     List<Business.Pagina> paginas = ViewBag.Paginas;
 }
+@if (TempData["Sucesso"] != null)
+{
+    <div class="alert alert-sucess">@TempData["Sucesso"]</div>
+}
+@if (TempData["Erro"] != null)
+{
+    <div class="alert alert-danger">@TempData["Erro"]</div>
+}
+
 
 <div class="jumbotron">
     <h3>Páginas</h3>
     <div>
-        <button class="btn btn-default"><a href="paginas/novo">Novo</a></button>
-  
+        <a href="paginas/novo" class="btn btn-primary">Novo</a>
+
     </div>
-    <table class="table">
+    <table class="table text-center">
         <tr>
             <td>Id</td>
             <td>Nome</td>
             <td>Data</td>
+            <td>Render</td>
             <td></td>
             <td></td>
         </tr>
         @foreach (var p in paginas)
         {
-    <tr>
-        <td>@p.Id</td>
-        <td>@p.Name</td>
-        <td>@p.Data</td>
-        <td><a href="/paginas/@p.Id/editar" class="btn btn-primary">Alterar</a></td>
-        <td><a href="/paginas/@p.Id/excluir" class="btn btn-danger" onclick="ValidaExclusao(@p.Id, event)">Excluir</a></td>
-    </tr>
+            <tr>
+                <td>@p.Id</td>
+                <td>@p.Name</td>
+                <td>@p.Data</td>
+                <!--td>@Html.Raw(p.Conteudo)</!--td Renderizar o html na pagina usa raw>-->
+                <td><a href="/paginas/@p.Id/preview" target="_blank" class="btn btn-warning">Preview</a></td>
+                <td><a href="/paginas/@p.Id/editar" class="btn btn-primary">Alterar</a></td>
+                <td><a href="/paginas/@p.Id/excluir" class="btn btn-danger" onclick="ValidaExclusao(@p.Id, event)">Excluir</a></td>
+            </tr>
         }
     </table>
 </div>
