@@ -53,7 +53,11 @@ namespace MVC_GerenciadorDeConteudo
           "paginas/{id}/excluir", new { controller = "Paginas", action = "Excluir", id = 0 }
           );
 
+            routes.MapRoute(
+             "consulta_cep",
+             "consulta_cep", new { controller = "Cep", action = "Index" }
 
+             );
 
             routes.MapRoute(
                 "contato",
